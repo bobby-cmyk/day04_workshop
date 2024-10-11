@@ -56,7 +56,8 @@ public class ClientMain {
         bis.close();
 
         OutputStream os = sock.getOutputStream();
-        DataOutputStream dos = new DataOutputStream(os);
+        BufferedOutputStream bos = new BufferedOutputStream(os);
+        DataOutputStream dos = new DataOutputStream(bos);
         
         // Clean up the filePath to only include the file name
         dos.writeUTF(fileName);
